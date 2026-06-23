@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default-deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Reusable, hardened global helper
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    match /categories/{categoryId} {
+      allow get: if isValidId(categoryId);
+      allow list: if true;
+      allow write: if isValidId(categoryId);
+    }
+
+    match /products/{productId} {
+      allow get: if isValidId(productId);
+      allow list: if true;
+      allow write: if isValidId(productId);
+    }
+
+    match /orders/{orderId} {
+      allow get: if isValidId(orderId);
+      allow list: if true;
+      allow write: if isValidId(orderId);
+    }
+
+    match /citizens/{citizenId} {
+      allow get: if isValidId(citizenId);
+      allow list: if true;
+      allow write: if isValidId(citizenId);
+    }
+
+    match /credentials/{credentialId} {
+      allow get: if isValidId(credentialId);
+      allow list: if true;
+      allow write: if isValidId(credentialId);
+    }
+
+    match /settings/{settingsId} {
+      allow get: if isValidId(settingsId);
+      allow list: if true;
+      allow write: if isValidId(settingsId);
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "collections": {
+    "categories": {
+      "schema": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "image": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+    "products": {
+      "schema": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "compareAtPrice": { "type": "number" },
+        "inventory": { "type": "number" },
+        "images": { "type": "array" },
+        "categoryId": { "type": "string" },
+        "sizes": { "type": "array" },
+        "colors": { "type": "array" },
+        "isFeatured": { "type": "boolean" },
+        "isActive": { "type": "boolean" },
+        "reviews": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "orders": {
+      "schema": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerEmail": { "type": "string" },
+        "status": { "type": "string" },
+        "total": { "type": "number" },
+        "shippingAddress": { "type": "map" },
+        "paymentStatus": { "type": "string" },
+        "stripeSessionId": { "type": "string" },
+        "items": { "type": "array" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "citizens": {
+      "schema": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "phone": { "type": "string" },
+        "location": { "type": "string" },
+        "VIPLevel": { "type": "string" },
+        "spend": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "credentials": {
+      "schema": {
+        "email": { "type": "string" },
+        "passwordHash": { "type": "string" }
+      }
+    },
+    "settings": {
+      "schema": {
+        "brandName": { "type": "string" },
+        "announcementBarText": { "type": "string" },
+        "isAnnouncementBarActive": { "type": "boolean" },
+        "freeShippingThreshold": { "type": "number" },
+        "taxRatePercentage": { "type": "number" },
+        "currencySymbol": { "type": "string" },
+        "currencyName": { "type": "string" },
+        "chiefCuratorEmail": { "type": "string" },
+        "isSignatureSeriesActive": { "type": "boolean" }
+      }
+    }
+  }
+}

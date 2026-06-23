@@ -1,0 +1,6 @@
+{
+  "name": "Orris Heritage Maison",
+  "description": "An exquisite digital embassy and administrative engine for Orris Heritage Foundation, coordinating elite citizenship records, commercial trade, and secure communications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

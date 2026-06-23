@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-luxury-accent: #C9A96E;
+  --color-luxury-bg: #FAFAFA;
+  --color-luxury-text: #1A1A1A;
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-sans);
+    background-color: var(--color-luxury-bg);
+    color: var(--color-luxury-text);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Smooth custom boutique scrollbelt */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E5E5E5;
+    border-radius: 9px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C9A96E;
+  }
+}
+
+/* Custom premium hover typewriter effects */
+@keyframes scale-slow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.animate-scale-slow {
+  animation: scale-slow 30s infinite alternate;
+}
